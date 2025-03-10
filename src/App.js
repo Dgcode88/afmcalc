@@ -10,7 +10,7 @@ function App() {
   
   // Constants that define the financial opportunity
   // -- In the realm of municipal decision-making, precision is paramount
-  const SAVINGS_RATE = 100; // $100 savings per ton of green carbon
+  const SAVINGS_RATE = 345; // 345 CAD savings per ton of green carbon
   
   // Calculate savings whenever carbon usage changes
   // -- The moment of revelation: when numbers transform into opportunity
@@ -35,9 +35,9 @@ function App() {
   // Format currency for display
   // -- Presenting financial opportunity with clarity and impact
   const formatCurrency = (value) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('en-CA', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'CAD',
       maximumFractionDigits: 0,
     }).format(value);
   };
@@ -77,13 +77,25 @@ function App() {
               <div className="savings-display">
                 {formatCurrency(annualSavings)}
               </div>
-              <p className="savings-rate">at ${SAVINGS_RATE} savings per ton</p>
+              <p className="savings-rate">at {formatCurrency(SAVINGS_RATE)} savings per ton</p>
             </div>
           </div>
           
           <div className="cta-section">
             <p>Transform your municipality's environmental impact while delivering measurable fiscal benefits to your constituents.</p>
-            <button className="cta-button">Request Consultation</button>
+            <button 
+              className="cta-button"
+              onClick={() => {
+                const emailSubject = 're: green carbon savings';
+                const emailAddress = 'said.samih@afmericatech.com';
+                const carbonAmount = carbonUsage || '0';
+                const savingsAmount = formatCurrency(annualSavings);
+                const emailBody = `I'm interested in learning more about green carbon savings. Based on my calculation of ${carbonAmount} tons, I could save ${savingsAmount} annually.`;
+                window.location.href = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+              }}
+            >
+              Request Consultation
+            </button>
           </div>
         </div>
         
