@@ -190,6 +190,9 @@ p {
   cursor: pointer;
   transition: transform var(--transition-speed), box-shadow var(--transition-speed);
   margin-top: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
 }
 
 .cta-button:hover {

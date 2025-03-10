@@ -83,19 +83,13 @@ function App() {
           
           <div className="cta-section">
             <p>Transform your municipality's environmental impact while delivering measurable fiscal benefits to your constituents.</p>
-            <button 
+            <a 
+              href={`mailto:said.samih@afmericatech.com?subject=${encodeURIComponent('re: green carbon savings')}&body=${encodeURIComponent(`I'm interested in learning more about green carbon savings. Based on my calculation of ${carbonUsage || '0'} tons, I could save ${formatCurrency(annualSavings)} annually.`)}`}
               className="cta-button"
-              onClick={() => {
-                const emailSubject = 're: green carbon savings';
-                const emailAddress = 'said.samih@afmericatech.com';
-                const carbonAmount = carbonUsage || '0';
-                const savingsAmount = formatCurrency(annualSavings);
-                const emailBody = `I'm interested in learning more about green carbon savings. Based on my calculation of ${carbonAmount} tons, I could save ${savingsAmount} annually.`;
-                window.location.href = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-              }}
+              role="button"
             >
               Request Consultation
-            </button>
+            </a>
           </div>
         </div>
         
