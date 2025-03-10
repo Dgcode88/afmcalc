@@ -1,0 +1,265 @@
+/* App.css - Green Carbon Savings Calculator
+   Where visual excellence meets persuasive design */
+
+/* Base styles and typography - The foundation of visual persuasion */
+:root {
+  --primary-color: #1e5631; /* Rich green symbolizing sustainability */
+  --secondary-color: #3a7d44; /* Complementary green for depth */
+  --accent-color: #4caf50; /* Vibrant green for emphasis */
+  --text-color: #333333; /* Refined dark gray for readability */
+  --light-text: #ffffff; /* Crisp white for contrast */
+  --background-color: #f9f9f9; /* Subtle off-white for sophistication */
+  --card-bg: #ffffff; /* Pure white for card backgrounds */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Subtle shadow for dimension */
+  --error-color: #d32f2f; /* Clear red for validation errors */
+  --border-radius: 8px; /* Consistent rounded corners */
+  --transition-speed: 0.3s; /* Smooth transitions */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--light-text);
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Layout structure - The architecture of persuasion */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--light-text);
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.tagline {
+  font-size: 1.2rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.calculator-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .calculator-container {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+/* Card components - The vessels of fiscal enlightenment */
+.calculator-card, .benefits-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 16px var(--shadow-color);
+  padding: 2rem;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.calculator-card:hover, .benefits-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px var(--shadow-color);
+}
+
+.calculator-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 1rem;
+}
+
+/* Input section - Where data transforms into opportunity */
+.input-section {
+  margin-bottom: 2rem;
+}
+
+.input-section label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-section input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  transition: border var(--transition-speed);
+}
+
+.input-section input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.input-section input.invalid {
+  border-color: var(--error-color);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Results section - The revelation of value */
+.results-section {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(30, 86, 49, 0.1) 100%);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.result-item {
+  text-align: center;
+}
+
+.savings-display {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 1rem 0;
+}
+
+.savings-rate {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  opacity: 0.8;
+}
+
+/* CTA section - The catalyst for action */
+.cta-section {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  color: var(--light-text);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+/* Benefits card - The testament to value proposition */
+.benefits-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.benefits-card h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.benefits-card ul {
+  list-style: none;
+}
+
+.benefits-card li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.benefits-card li:before {
+  content: "✓";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.benefits-card li span {
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+/* Footer - The signature of quality */
+.app-footer {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+/* Responsive adjustments - Adaptability across devices */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .savings-display {
+    font-size: 2.5rem;
+  }
+  
+  .calculator-card, .benefits-card {
+    padding: 1.5rem;
+  }
+}
